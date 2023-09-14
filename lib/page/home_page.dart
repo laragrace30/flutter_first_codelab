@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
             const Text('A random idea:'),
             Text(appState.current.asUpperCase),
             ElevatedButton(
-              onPressed: () => debugPrint('next button pressed'),
+              onPressed: () => appState.getNext(),
               child: const Text('Next'),
               ),
           ],
