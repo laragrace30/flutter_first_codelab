@@ -14,15 +14,18 @@ class HomePage extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          children: [
-            const Text('A random idea:'),
-            BigCard(wordPair: wordPair),
-            ElevatedButton(
-              onPressed: () => appState.getNext(),
-              child: const Text('Next'),
-              ),
-          ],
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              BigCard(wordPair: wordPair),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () => appState.getNext(),
+                child: const Text('Next'),
+                ),
+            ],
+          ),
         ),
       ),
     );
