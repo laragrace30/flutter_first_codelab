@@ -12,6 +12,13 @@ class HomePage extends StatelessWidget {
     var appState = context.watch<MyAppState>();
     var wordPair = appState.current;
 
+    IconData icon;
+    if (appState.favorites.contains(wordPair)){
+      icon = Icons.favorite;
+    } else {
+      icon = Icons.favorite_border;
+    }
+
     return SafeArea(
       child: Scaffold(
         body: Center(
@@ -23,8 +30,9 @@ class HomePage extends StatelessWidget {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  ElevatedButton.icon(onPressed: () => debugPrint('like button pressed'),
-                   icon: const Icon(Icons.favorite), 
+                  ElevatedButton.icon(
+                    onPressed: () => appState.toggleFavorite(),
+                   icon: Icon(icon), 
                    label: const Text('Like'),
                    ),
                    const SizedBox(width: 10),  
