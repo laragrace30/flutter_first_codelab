@@ -21,8 +21,7 @@ class GeneratorPage extends StatelessWidget {
       icon = Icons.favorite_border;
     }
 
-    return Scaffold(
-      body: Center(
+    return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -45,7 +44,6 @@ class GeneratorPage extends StatelessWidget {
             ),
           ],
         ),
-      ),
     );
   }
 }
